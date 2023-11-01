@@ -5,11 +5,12 @@ import { useEffect } from "react";
 import { calculateTotals } from "./features/cart/cartSlice";
 function App() {
 	const { cartItems } = useSelector((store) => store.cart);
-	const dipatch = useDispatch();
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatchEvent(calculateTotals());
-	}, [cartItems]);
+		dispatch(calculateTotals());
+	}, [cartItems, dispatch]);
+
 	return (
 		<main>
 			<Navbar />
